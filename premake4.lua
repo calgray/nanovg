@@ -9,7 +9,7 @@ solution "nanovg"
    	project "nanovg"
 		language "C"
 		kind "StaticLib"
-		includedirs { "src" }
+		includedirs { "include", "src" }
 		files { "src/*.c" }
 		targetdir("build")
 		defines { "_CRT_SECURE_NO_WARNINGS" } --,"FONS_USE_FREETYPE" } Uncomment to compile with FreeType support
@@ -27,7 +27,7 @@ solution "nanovg"
 		kind "ConsoleApp"
 		language "C"
 		files { "example/example_gl2.c", "example/demo.c", "example/perf.c" }
-		includedirs { "src", "example" }
+		includedirs { "include" }
 		targetdir("build")
 		links { "nanovg" }
 
@@ -56,7 +56,7 @@ solution "nanovg"
 		kind "ConsoleApp"
 		language "C"
 		files { "example/example_gl3.c", "example/demo.c", "example/perf.c" }
-		includedirs { "src", "example" }
+		includedirs { "include" }
 		targetdir("build")
 		links { "nanovg" }
 
@@ -86,7 +86,7 @@ solution "nanovg"
 		language "C"
 		defines { "DEMO_MSAA" }
 		files { "example/example_gl2.c", "example/demo.c", "example/perf.c" }
-		includedirs { "src", "example" }
+		includedirs { "include" }
 		targetdir("build")
 		links { "nanovg" }
 
@@ -116,7 +116,7 @@ solution "nanovg"
 		language "C"
 		defines { "DEMO_MSAA" }
 		files { "example/example_gl3.c", "example/demo.c", "example/perf.c" }
-		includedirs { "src", "example" }
+		includedirs { "include" }
 		targetdir("build")
 		links { "nanovg" }
 
@@ -145,7 +145,7 @@ solution "nanovg"
 		kind "ConsoleApp"
 		language "C"
 		files { "example/example_fbo.c", "example/perf.c" }
-		includedirs { "src", "example" }
+		includedirs { "include" }
 		targetdir("build")
 		links { "nanovg" }
 
@@ -173,7 +173,7 @@ solution "nanovg"
 		kind "ConsoleApp"
 		language "C"
 		files { "example/example_gles2.c", "example/demo.c", "example/perf.c" }
-		includedirs { "src", "example" }
+		includedirs { "include" }
 		targetdir("build")
 		links { "nanovg" }
 
@@ -201,7 +201,7 @@ solution "nanovg"
 		kind "ConsoleApp"
 		language "C"
 		files { "example/example_gles3.c", "example/demo.c", "example/perf.c" }
-		includedirs { "src", "example" }
+		includedirs { "include" }
 		targetdir("build")
 		links { "nanovg" }
 
