@@ -40,28 +40,28 @@ import nvg
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-def draw1(vg):
+def draw1(vg, width, height):
     vg.BeginPath()
     vg.Rect(300, 100, 120, 30)
     vg.FillColor(nvg.RGBA(255, 192, 0, 255))
     vg.Fill()
     vg.ClosePath()
 
-def draw2(vg): # Rectangle
+def draw2(vg, width, height): # Rectangle
     vg.BeginPath()
     vg.Rect(100,100,300,150)
     vg.FillColor(nvg.RGBAf(1, 0, 0, 0.5))
     vg.Fill()
     vg.ClosePath()
 
-def draw3(vg): # Rounded rectangle
+def draw3(vg, width, height): # Rounded rectangle
     vg.BeginPath()
     vg.RoundedRect(100, 100, 300, 150, 10)
     vg.FillColor(nvg.RGBAf(1, 0, 0, 0.5))
     vg.Fill()
     vg.ClosePath()
 
-def draw4(vg): # Triangles
+def draw4(vg, width, height): # Triangles
     vg.BeginPath()
     vg.MoveTo(100, 100) # Top left corner
     vg.LineTo(400, 100) # Top right corner: 100 (x) + 300 (w), y remains
@@ -71,7 +71,7 @@ def draw4(vg): # Triangles
     vg.Fill()
     vg.ClosePath()
 
-def draw5(vg): # Triangle outline
+def draw5(vg, width, height): # Triangle outline
     vg.BeginPath()
     vg.MoveTo(100, 100)
     vg.LineTo(400, 100)
@@ -82,7 +82,7 @@ def draw5(vg): # Triangle outline
     vg.Stroke()
     vg.ClosePath()
 
-def draw6(vg): # Concave filling
+def draw6(vg, width, height): # Concave filling
     vg.BeginPath()
     vg.MoveTo(100, 100)
     vg.LineTo(150, 150)
@@ -97,7 +97,7 @@ def draw6(vg): # Concave filling
     vg.Fill()
     vg.ClosePath()
 
-def draw7(vg): # Gradients and paints
+def draw7(vg, width, height): # Gradients and paints
     vg.BeginPath()
     vg.Rect(100, 100, 300, 500)
     vg.FillPaint(vg.BoxGradient(100, 200, 300, 300, 150, 100, nvg.RGBAf(1, 0, 0, 1), nvg.RGBAf(1, 1, 0, 1)))
@@ -113,7 +113,7 @@ def draw7(vg): # Gradients and paints
     vg.FillPaint(vg.RadialGradient(1050, 350, 100, 200, nvg.RGBAf(1, 0, 0, 1), nvg.RGBAf(1, 1, 0, 1)))
     vg.Fill()
 
-def draw8(vg): # Bezier Quad I
+def draw8(vg, width, height): # Bezier Quad I
     vg.BeginPath()
     vg.MoveTo(100, 100) # Start point: (100, 100)
     vg.QuadTo(200, 400, 300, 100) # Control point: (200, 400); End point: (300, 100)
@@ -122,7 +122,7 @@ def draw8(vg): # Bezier Quad I
     vg.Stroke()
     vg.ClosePath()
 
-def draw9(vg): # Bezier Quad II
+def draw9(vg, width, height): # Bezier Quad II
     vg.BeginPath()
     vg.MoveTo(100, 100) # Start point: (100, 100)
     vg.QuadTo(150, 400, 300, 300) # Control point: (150, 400); End point: (300, 300)
@@ -131,7 +131,7 @@ def draw9(vg): # Bezier Quad II
     vg.Stroke()
     vg.ClosePath()
 
-def draw10(vg): # Bezier Quad III
+def draw10(vg, width, height): # Bezier Quad III
     vg.BeginPath()
     vg.MoveTo(100, 100)
     vg.QuadTo(150, 400, 300, 300)
@@ -143,7 +143,7 @@ def draw10(vg): # Bezier Quad III
     vg.Stroke()
     vg.ClosePath()
 
-def draw11(vg): # Bezier Cubic I
+def draw11(vg, width, height): # Bezier Cubic I
     vg.BeginPath()
     vg.MoveTo(100, 100)
     vg.BezierTo(150, 400, 450, 200, 300, 400)
@@ -152,7 +152,7 @@ def draw11(vg): # Bezier Cubic I
     vg.Stroke()
     vg.ClosePath()
 
-def draw12(vg): # Bézier Cubic II
+def draw12(vg, width, height): # Bézier Cubic II
     vg.BeginPath()
     vg.MoveTo(100, 100)
     vg.BezierTo(150, 400, 450, 200, 300, 400)
@@ -250,7 +250,7 @@ def runTest():
         GL.glClear(GL.GL_COLOR_BUFFER_BIT)
 
         vg.BeginFrame(winWidth, winHeight, pxRatio)
-        draw12(vg)
+        draw12(vg, winWidth, winHeight)
         vg.EndFrame()
 
         sdl2.SDL_GL_SwapWindow(window)
