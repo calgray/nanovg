@@ -8,7 +8,7 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src)
 ADD_COMPILE_OPTIONS(-Wall -Werror)
 ADD_LINK_OPTIONS(LINKER:--as-needed LINKER:--no-undefined LINKER:--no-allow-shlib-undefined)
 
-option(NANOVG_SHARED_LIBS "Build shared libraries" ON)
+option(NANOVG_BUILD_SHARED "Build as shared library" ON)
 option(NANOVG_BUILD_EXAMPLES "Build examples" ON)
 option(NANOVG_BUILD_GL2 "Build OpenGL 2" ON)
 option(NANOVG_BUILD_GL3 "Build OpenGL 3" ON)
